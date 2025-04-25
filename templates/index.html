@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consumo de água necessário</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Consumo de água necessário</h1>
+        <form action='/calcular_agua' method='post'>
+            <label for="peso">Digite seu peso (kg):</label>
+            <input type="number" id="peso" name="peso" required>
+
+            <button type="submit">Calcular consumo de água</button>
+        </form>
+
+        {% if qtd %}
+        <div class="resultado">
+            <h2>Resultado do consumo necessário</h2>
+            <p><strong>Quantidade (L):</strong> {{ qtd }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
